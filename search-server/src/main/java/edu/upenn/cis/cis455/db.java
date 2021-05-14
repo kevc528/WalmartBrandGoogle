@@ -16,9 +16,9 @@ public class db {
 	      try {
 	      Class.forName("org.postgresql.Driver");
 	      String dbName = "postgres";
-	      String userName = "master";
-	      String password = "ilovezackives";
-	      String hostname = "cis555-project.ckm3s06jrxk1.us-east-1.rds.amazonaws.com";
+	      String userName = System.getenv("RDS_USERNAME");
+	      String password = System.getenv("RDS_PASSWORD");
+	      String hostname = System.getenv("RDS_HOSTNAME");
 	      String port = "5432";
 	      String jdbcUrl = "jdbc:postgresql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
 	      System.out.println(jdbcUrl);
